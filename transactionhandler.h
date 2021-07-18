@@ -2,6 +2,7 @@
 #define TRANSACTIONHANDLER_H
 
 #include "transactionlist.h"
+#include <QDomDocument>
 
 // Handler class to manage the transaction list & keep it independent of UI:
 class TransactionHandler {
@@ -9,7 +10,7 @@ public:
     // constructor:
     TransactionHandler();
 
-    // functions to handle button instructions:
+    // functions to handle instructions from UI:
     void transact(QString tt, double a);
     bool toFile();
 
