@@ -3,19 +3,17 @@
 
 #include "transaction.h"
 
-class TransactionList
-{
-
+class TransactionList {
 public:
-    static TransactionList* getInstance();
-    void addTransaction(Transaction* t);
-    QList<Transaction*> returnList();
+    static TransactionList* getInstance(); // getter for TransactionList instance
+    void addTransaction(Transaction *t); // appends transactions to the list
+    QList<Transaction*> returnList();   // getter for the list
     ~TransactionList();
 
 private:
-    TransactionList();
-    static TransactionList* list;
-    QList<Transaction*> transactionList;
+    TransactionList(); // private constructor
+    static TransactionList* instance; // single instance of TransactionList
+    QList<Transaction*> transactionList; // list of transactions
 };
 
 #endif // TRANSACTIONLIST_H

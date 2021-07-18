@@ -17,12 +17,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_depositButton_released();
-    void on_withdrawalButton_released();
-    void on_toFileButton_released();
+    void depositButtonReleased();
+    void withdrawalButtonReleased();
+    void toFileButtonReleased();
 
 private:
     Ui::MainWindow *ui;
-    TransactionHandler th;
+    TransactionHandler handler;
 };
 #endif // MAINWINDOW_H

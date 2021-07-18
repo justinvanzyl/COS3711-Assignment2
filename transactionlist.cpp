@@ -1,11 +1,11 @@
 #include "transactionlist.h"
 
-TransactionList* TransactionList::list = NULL;
+TransactionList* TransactionList::instance = NULL;
 
 TransactionList* TransactionList::getInstance() {
-    if (list == NULL)
-        list = new TransactionList;
-    return list;
+    if (instance == NULL) // initializes the instance if it hasnt been
+        instance = new TransactionList;
+    return instance;
 }
 
 void TransactionList::addTransaction(Transaction *t) {

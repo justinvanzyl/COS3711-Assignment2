@@ -3,16 +3,21 @@
 
 #include "transactionlist.h"
 
+// Handler class to manage the transaction list & keep it independent of UI:
 class TransactionHandler {
 public:
+    // constructor:
     TransactionHandler();
-    void makeDeposit(double a);
-    void makeWithdrawal(double a);
-    bool writeToFile();
+
+    // functions to handle button instructions:
+    void transact(QString tt, double a);
+    bool toFile();
+
+    //destructor:
     ~TransactionHandler();
 
 private:
-    TransactionList* transactionList;
+    TransactionList* transactionList; // TransactionList pointer data member
 };
 
 #endif // TRANSACTIONHANDLER_H

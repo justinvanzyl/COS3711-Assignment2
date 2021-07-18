@@ -4,25 +4,36 @@
 #include <QDate>
 #include <QTime>
 #include <QStringList>
+#include <QObject>
 
 class Transaction {
 public:
-    enum TransactionType {Withdrawal, Deposit};
+    // enumerator for our 2 types of transactions:
+    enum TransactionType {
+        Withdrawal,
+        Deposit
+    }; // must be declared ahead of parameterized constructor
+
+    // constructors:
     Transaction();
     Transaction(QDate d, QTime t, double a, TransactionType tt);
-    static const QStringList sm_TransactionType;
-    QString toString() const;
 
+    // getters:
     QDate getDate() const;
     QTime getTime() const;
     double getAmount() const;
     QString getType() const;
 
+    // setters:
     void setDate(QDate d);
     void setTime(QTime t);
     void setAmount(double a);
     void setType(QString tt);
 
+    // output object state as text:
+    QString toString() const;
+
+    // destructor:
     ~Transaction();
 
 private:
