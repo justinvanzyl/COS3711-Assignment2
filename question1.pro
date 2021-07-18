@@ -11,11 +11,15 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    transaction.cpp
+    transaction.cpp \
+    transactionhandler.cpp \
+    transactionlist.cpp
 
 HEADERS += \
     mainwindow.h \
-    transaction.h
+    transaction.h \
+    transactionhandler.h \
+    transactionlist.h
 
 FORMS += \
     mainwindow.ui
