@@ -12,7 +12,7 @@ public:
     enum TransactionType {
         Withdrawal,
         Deposit
-    }; // must be declared ahead of parameterized constructor
+    }; // must be declared ahead of first use (constructor)
 
     // constructors:
     Transaction();

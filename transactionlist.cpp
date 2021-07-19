@@ -16,8 +16,7 @@ QList<Transaction*> TransactionList::returnList() {
     return transactionList;
 }
 
-TransactionList::TransactionList()
-{}
+TransactionList::TransactionList() {}
 
 TransactionList::~TransactionList() {
     qDeleteAll(transactionList);

@@ -2,12 +2,14 @@
 #define SORTFACTORY_H
 
 #include "sort.h"
+#include "selectionsort.h"
+#include "insertionsort.h"
 
 class SortFactory
 {
 public:
     SortFactory();
-    Sort* sort(QString type, QList<Transaction*> l);
+    Sort* setSort(QString type, QList<Transaction*> l);
 };
 
 #endif // SORTFACTORY_H

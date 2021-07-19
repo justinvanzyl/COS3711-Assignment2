@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>332</width>
-    <height>161</height>
+    <height>201</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -101,6 +101,39 @@
     <property name="text">
      <string>To file</string>
     </property>
+   </widget>
+   <widget class="QPushButton" name="sortButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>160</y>
+      <width>150</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sort</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="sortComboBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>150</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Selection</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Insertion</string>
+     </property>
+    </item>
    </widget>
   </widget>
  </widget>

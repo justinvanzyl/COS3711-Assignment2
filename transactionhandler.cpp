@@ -19,21 +19,19 @@ void TransactionHandler::transact(QString tt, double a) {
         type = Transaction::TransactionType::Withdrawal;
     else {
         //terminate early in case of error:
-        //(mainly included to get rid of IDE warnings)
         cout << "error creating transaction" << Qt::endl;
         return;
     }
 
-    Transaction *deposit = new Transaction(QDate::currentDate(),
+    Transaction *transaction = new Transaction(QDate::currentDate(),
                                            QTime::currentTime(),
                                            a,
                                            type);
-    transactionList->addTransaction(deposit); // add to transaction list
-    cout << deposit->toString() << Qt::endl; // write to console
+    transactionList->addTransaction(transaction); // add to transaction list
+    cout << transaction->toString() << Qt::endl; // write to console
 }
 
 bool TransactionHandler::toFile() {
-
     QList<Transaction*> outList = transactionList->returnList();
 
     // create a DOM document and add nodes for each transaction:
@@ -73,6 +71,26 @@ bool TransactionHandler::toFile() {
     QTextStream fout(&outFile);
     fout << doc.toString();
     outFile.close();
+    return true;
+}
+
+
+bool TransactionHandler::sort(QString sortType) {
+    // create a SortFactory and use it to initialize a Sort:
+    SortFactory* factory = new SortFactory();
+    Sort* sortObject = factory->setSort(sortType, transactionList->returnList());
+    delete factory;
+
+    // exit early if an invalid sort-type is given:
+    if (sortObject == NULL)
+        return false;
+
+    // sort the list and output it to console:
+    sortObject->sort();
+    QList<Transaction*> sortedList = sortObject->getList();
+    cout << "----- RESULTS OF " << sortType.toUpper() << ": -----"  << Qt::endl;
+    for (int i = 0; i < sortedList.size(); i++)
+        cout << sortedList[i]->toString() << Qt::endl;
     return true;
 }
 

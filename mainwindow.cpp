@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->depositButton, SIGNAL(released()), this, SLOT(depositButtonReleased()));
     connect(ui->withdrawalButton, SIGNAL(released()), this, SLOT(withdrawalButtonReleased()));
     connect(ui->toFileButton, SIGNAL(released()), this, SLOT(toFileButtonReleased()));
+    connect(ui->sortButton, SIGNAL(released()), this, SLOT(sortButtonReleased()));
 }
 
 MainWindow::~MainWindow() {
@@ -34,6 +35,11 @@ void MainWindow::toFileButtonReleased() {
     else
         msg = "Could not save transactions to file";
     QMessageBox::information(0, "Saving transactions to file", msg);
+}
+
+void MainWindow::sortButtonReleased() {
+    if (!handler.sort(ui->sortComboBox->currentText()))
+        QMessageBox::critical(0, "Sort error", "Invalid sort method");
 }
 
 /*
