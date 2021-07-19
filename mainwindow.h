@@ -20,6 +20,7 @@ private slots:
     void depositButtonReleased();
     void withdrawalButtonReleased();
     void toFileButtonReleased();
+    void sortButtonReleased();
 
 private:
     Ui::MainWindow *ui;

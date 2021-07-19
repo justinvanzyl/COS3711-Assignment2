@@ -9,14 +9,22 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    insertionsort.cpp \
     main.cpp \
     mainwindow.cpp \
+    selectionsort.cpp \
+    sort.cpp \
+    sortfactory.cpp \
     transaction.cpp \
     transactionhandler.cpp \
     transactionlist.cpp
 
 HEADERS += \
+    insertionsort.h \
     mainwindow.h \
+    selectionsort.h \
+    sort.h \
+    sortfactory.h \
     transaction.h \
     transactionhandler.h \
     transactionlist.h

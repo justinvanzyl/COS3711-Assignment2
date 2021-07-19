@@ -3,6 +3,7 @@
 
 #include "transactionlist.h"
 #include <QDomDocument>
+#include "sortfactory.h"
 
 // Handler class to manage the transaction list & keep it independent of UI:
 class TransactionHandler {
@@ -13,6 +14,7 @@ public:
     // functions to handle instructions from UI:
     void transact(QString tt, double a);
     bool toFile();
+    bool sort(QString sortType);
 
     //destructor:
     ~TransactionHandler();
